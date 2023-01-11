@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <title>Bildergalerie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .mySlides {display:none}
+  </style>
+  <body>
+
+    <div class="o-container">
+      <h2>Galerie</h2>
+    </div>
+
+    <div class="o-content" style="max-width:800px">
+      <img class="mySlides" src="Image.jpeg" style="width:100%">
+      <img class="mySlides" src="Imager.jpeg" style="width:100%">
+      <img class="mySlides" src="Imagle.jpeg" style="width:100%">
+      <img class="mySlides" src="Imakge.jpeg" style="width:100%">
+      <img class="mySlides" src="Imange.jpeg" style="width:100%">
+      <img class="mySlides" src="MicrosoftTeams-image.png" style="width:100%">
+      <img class="mySlides" src="unbenannte.gif" style="width:100%">
+    </div>
+
+    <div class="o-center">
+      <div class="o-section">
+        <button class="o-button o-light-grey" onclick="plusDivs(-1)">❮ Vorheriges Foto</button>
+        <button class="o-button o-light-grey" onclick="plusDivs(1)">Nächstes Foto ❯</button>
+      </div>
+      <button class="o-button demo" onclick="currentDiv(1)">1</button> 
+      <button class="o-button demo" onclick="currentDiv(2)">2</button> 
+      <button class="o-button demo" onclick="currentDiv(3)">3</button> 
+      <button class="o-button demo" onclick="currentDiv(4)">4</button> 
+      <button class="o-button demo" onclick="currentDiv(5)">5</button>
+      <button class="o-button demo" onclick="currentDiv(6)">6</button>
+      <button class="o-button demo" onclick="currentDiv(7)">7</button>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function currentDiv(n) {
+        showDivs(slideIndex = n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {
+          slideIndex = 1
+        }    
+      if (n < 1) {
+        slideIndex = x.length
+      }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" o-red", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " o-red";
+      }
+    </script>
+
+  </body>
+</html>
