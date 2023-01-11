@@ -9,13 +9,11 @@
   <head>
   </head>
   <body>
+    <embed name="musica" src="musica.mp3" loop="false" hidden="true" autostart="true">
 
     <div class="o-container">
       <h2>Galerie</h2>
     </div>
-    <audio src="musica.mp3" controls autoplay>
-      <p>If you are reading this, it is because your browser does not support the audio element.</p>
-      </audio>
 
     <div class="o-content" style="max-width:800px">
       <img class="mySlides" src="Image.jpeg" style="width:100%">
@@ -40,6 +38,9 @@
       <button class="o-button demo" onclick="currentDiv(6)">6</button>
       <button class="o-button demo" onclick="currentDiv(7)">7</button>
     </div>
+    <video controls autoplay name="media">
+      <source src="musica.mp3" type="audio/mpeg">
+    </video>
 
     <script>
       var slideIndex = 1;
